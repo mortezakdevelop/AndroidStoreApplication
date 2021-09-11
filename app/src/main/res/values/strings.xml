@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">فروشگاه اینترنتی</string>
+    <string name="slogan">بهترین خرید زندگیت رو با ما تجربه کن</string>
+    <string name="web_site">www.morteza.kalaateh.com</string>
+    <string name="title_no_internet">اتصال شما به اینترنت قطع شده است</string>
+    <string name="description_no_internet">برای استفاده از این اپلیکیشن نیاز به اینترنت دارید. لطفا دستگاه خود را به اینترنت وصل کنید</string>
+    <string name="connect_to_wifi">اتصال به وای فای</string>
+    <string name="connect_to_mobile_data">اتصال به دیتای موبایل</string>
+
+    <string name="login">ورود</string>
+    <string name="hint_username">ایمیل خود را وارد نمایید</string>
+    <string name="username">نام کاربری</string>
+    <string name="password">رمز عبور</string>
+    <string name="hint_password">رمز عبور خود را وارد کنید</string>
+    <string name="create_account">حساب کاربری ایجاد کنید</string>
+    <string name="forget_password">فراموشی کلمه عبور</string>
+</resources>
