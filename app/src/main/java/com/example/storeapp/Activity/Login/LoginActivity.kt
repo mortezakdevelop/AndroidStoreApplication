@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.storeapp.Activity.SignUp.SignUpActivity
 import com.example.storeapp.Components.BaseActivity
 import com.example.storeapp.Components.showToast
 import com.example.storeapp.Dialog.NoInternet.NoInternetActivity
@@ -21,8 +22,13 @@ class LoginActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        context = this
         bind()
+        context = this
+        binding.tvTitleSignup.setOnClickListener{
+            val intent = Intent(context,SignUpActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.btnLogin.setOnClickListener{
             if (checkNetwork()){
                sendRequest()
@@ -33,6 +39,8 @@ class LoginActivity : BaseActivity() {
                 startActivity(intent)
             }
         }
+
+
     }
 
     //bind layout viewBinding
