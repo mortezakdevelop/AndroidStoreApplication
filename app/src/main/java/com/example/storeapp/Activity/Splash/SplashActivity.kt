@@ -43,6 +43,8 @@ class SplashActivity : BaseActivity() {
                 // go to login
                 val intent = Intent(this,LoginActivity::class.java)
                 startActivity(intent)
+                // delete splash activity in stack of ram
+                finish()
             }else{
                 val intent = Intent(this,NoInternetActivity::class.java)
                 startActivity(intent)

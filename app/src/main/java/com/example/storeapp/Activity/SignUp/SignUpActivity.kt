@@ -2,11 +2,12 @@ package com.example.storeapp.Activity.SignUp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.storeapp.Components.BaseActivity
 import com.example.storeapp.Components.showToast
 import com.example.storeapp.R
 import com.example.storeapp.databinding.ActivitySignUpBinding
 
-class SignUpActivity : AppCompatActivity() {
+class SignUpActivity : BaseActivity() {
     private lateinit var binding: ActivitySignUpBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

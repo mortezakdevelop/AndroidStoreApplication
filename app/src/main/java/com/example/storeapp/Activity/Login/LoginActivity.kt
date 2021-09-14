@@ -1,10 +1,12 @@
 package com.example.storeapp.Activity.Login
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.storeapp.Components.BaseActivity
 import com.example.storeapp.Components.showToast
+import com.example.storeapp.Dialog.NoInternet.NoInternetActivity
 import com.example.storeapp.R
 import com.example.storeapp.databinding.ActivityLoginBinding
 
@@ -22,23 +24,33 @@ class LoginActivity : BaseActivity() {
         context = this
         bind()
         binding.btnLogin.setOnClickListener{
-            getEmail()
-            if (checkEmail()){
-                // true --> now you can check password
-                getPassword()
-                if (checkPassword()){
-                    // true --> now you can send request server
-                    showToast(context,"now you can send request to server")
-                }
+            if (checkNetwork()){
+               sendRequest()
+
+            }else{
+                // show no internet dialog
+                val intent = Intent(context,NoInternetActivity::class.java)
+                startActivity(intent)
             }
         }
-
     }
 
     //bind layout viewBinding
     private fun bind() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+    }
+
+    private fun sendRequest(){
+        getEmail()
+        if (checkEmail()){
+            // true --> now you can check password
+            getPassword()
+            if (checkPassword()){
+                // true --> now you can send request server
+                showToast(context,"now you can send request to server")
+            }
+        }
     }
 
     // get username(email) from client
