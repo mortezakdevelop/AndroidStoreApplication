@@ -38,16 +38,16 @@ class SplashActivity : BaseActivity() {
 
     //اگر کاربر اینترنت داشت اسپلش را نشان نمی دهد. برای حل این مشکل یه تایم به آن می دهیم تا اسپلش را در تایم تعیین شده نمایش دهد
     fun showSplash(){
-      Handler().postDelayed({
-          if(checkNetwork()){
-              // go to login
-              val intent = Intent(this,LoginActivity::class.java)
-              startActivity(intent)
-          }else{
-              val intent = Intent(this,NoInternetActivity::class.java)
-              startActivity(intent)
-          }
-      },TIME_OUT)
+        Handler().postDelayed({
+            if(checkNetwork()){
+                // go to login
+                val intent = Intent(this,LoginActivity::class.java)
+                startActivity(intent)
+            }else{
+                val intent = Intent(this,NoInternetActivity::class.java)
+                startActivity(intent)
+            }
+        },TIME_OUT)
     }
 
 

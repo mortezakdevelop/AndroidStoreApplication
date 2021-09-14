@@ -12,6 +12,9 @@
         android:supportsRtl="false"
         android:theme="@style/Theme.StoreApp">
         <activity
+            android:name=".Activity.SignUp.SignUpActivity"
+            android:exported="true" />
+        <activity
             android:name=".Activity.Login.LoginActivity"
             android:exported="true" />
         <activity

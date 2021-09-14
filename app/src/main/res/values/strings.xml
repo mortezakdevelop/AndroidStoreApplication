@@ -12,6 +12,10 @@
     <string name="username">نام کاربری</string>
     <string name="password">رمز عبور</string>
     <string name="hint_password">رمز عبور خود را وارد کنید</string>
-    <string name="create_account">حساب کاربری ایجاد کنید</string>
+    <string name="create_account">حساب کاربری ندارید؟ ثبت نام کنید</string>
     <string name="forget_password">فراموشی کلمه عبور</string>
+    <string name="sign_up">ثبت نام</string>
+    <string name="email_signup">ایمیل</string>
+    <string name="confirm_password">تایید رمز عبور</string>
+    <string name="hint_confirm_password">رمز عبور خود را دوباره وارد نمایید</string>
 </resources>

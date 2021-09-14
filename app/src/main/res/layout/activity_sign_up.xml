@@ -5,37 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/dark_background"
-    tools:context=".Activity.Login.LoginActivity">
-
+    tools:context=".Activity.SignUp.SignUpActivity">
 
     <TextView
-        android:id="@+id/tv_title_login"
+        android:id="@+id/tv_title_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_50dp"
-        android:text="@string/login"
+        android:text="@string/sign_up"
         android:textColor="@color/white"
-        android:textSize="@dimen/font_30sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_title_username"
+        android:id="@+id/tv_title_email_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_25dp"
         android:layout_marginRight="@dimen/margin_25dp"
-        android:text="@string/username"
+        android:text="@string/email_signup"
         android:textColor="@color/white"
         android:textSize="@dimen/font_13sp"
         android:textStyle="bold"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_title_login" />
+        app:layout_constraintTop_toBottomOf="@id/tv_title_signup" />
 
     <EditText
-        android:id="@+id/et_username_login"
+        android:id="@+id/et_input_email_signup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_25dp"
@@ -48,16 +47,15 @@
         android:paddingTop="@dimen/padding_10dp"
         android:paddingRight="@dimen/padding_10dp"
         android:paddingBottom="@dimen/padding_10dp"
-        android:textColorHint="@color/gray_light"
         android:textColor="@color/white"
+        android:textColorHint="@color/gray_light"
         android:textSize="@dimen/font_13sp"
         android:textStyle="bold"
-        app:layout_constraintRight_toRightOf="@id/tv_title_username"
-        app:layout_constraintTop_toBottomOf="@id/tv_title_username"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_email_signup"
         app:layout_constraintWidth_percent="0.8" />
 
     <TextView
-        android:id="@+id/tv_title_password"
+        android:id="@+id/tv_title_password_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_25dp"
@@ -67,75 +65,78 @@
         android:textSize="@dimen/font_13sp"
         android:textStyle="bold"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_username_login" />
+        app:layout_constraintTop_toBottomOf="@id/et_input_email_signup" />
 
     <EditText
-
-        android:id="@+id/et_password_login"
+        android:id="@+id/et_input_password_signup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_25dp"
         android:layout_marginTop="@dimen/margin_13dp"
         android:layout_marginRight="@dimen/margin_25dp"
         android:background="@drawable/shape_edittext_stroke"
+        android:gravity="right"
         android:hint="@string/hint_password"
-        android:inputType="textPassword"
+        android:inputType="text"
         android:paddingLeft="@dimen/padding_10dp"
         android:paddingTop="@dimen/padding_10dp"
         android:paddingRight="@dimen/padding_10dp"
         android:paddingBottom="@dimen/padding_10dp"
+        android:textColor="@color/white"
         android:textColorHint="@color/gray_light"
+        android:textSize="@dimen/font_13sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_password_signup"
+        app:layout_constraintWidth_percent="0.8" />
+
+
+    <TextView
+        android:id="@+id/tv_title_confirm_password_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_25dp"
+        android:layout_marginRight="@dimen/margin_25dp"
+        android:text="@string/confirm_password"
         android:textColor="@color/white"
         android:textSize="@dimen/font_13sp"
         android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_input_password_signup" />
+
+    <EditText
+        android:id="@+id/et_input_confirm_password_signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_25dp"
+        android:layout_marginTop="@dimen/margin_13dp"
+        android:layout_marginRight="@dimen/margin_25dp"
+        android:background="@drawable/shape_edittext_stroke"
         android:gravity="right"
-        app:layout_constraintRight_toRightOf="@id/tv_title_password"
-        app:layout_constraintTop_toBottomOf="@id/tv_title_password"
+        android:hint="@string/hint_confirm_password"
+        android:inputType="text"
+        android:paddingLeft="@dimen/padding_10dp"
+        android:paddingTop="@dimen/padding_10dp"
+        android:paddingRight="@dimen/padding_10dp"
+        android:paddingBottom="@dimen/padding_10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/gray_light"
+        android:textSize="@dimen/font_13sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_confirm_password_signup"
         app:layout_constraintWidth_percent="0.8" />
 
     <Button
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_password_login"
-        android:layout_marginTop="@dimen/margin_50dp"
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_signup"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
+        android:layout_marginTop="@dimen/margin_50dp"
+        android:background="@drawable/shape_rect_gold"
+        android:text="@string/sign_up"
         android:textSize="@dimen/font_16sp"
-        app:layout_constraintWidth_percent="0.4"
-        android:text="@string/login"
-        android:background="@drawable/shape_rect_gold" />
-
-    <TextView
-        app:layout_constraintTop_toBottomOf="@id/btn_login"
-        android:layout_marginTop="@dimen/margin_25dp"
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-
-        android:textStyle="bold"
-        android:text="@string/create_account"
-        android:textSize="@dimen/font_16sp"
-        android:textColor="@color/white"
-        android:id="@+id/tv_title_signup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        app:layout_constraintTop_toBottomOf="@id/tv_title_signup"
-        android:layout_marginTop="@dimen/margin_25dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:paddingTop="@dimen/padding_10dp"
-        android:paddingBottom="@dimen/padding_10dp"
-        android:paddingLeft="@dimen/padding_5dp"
-        android:paddingRight="@dimen/padding_5dp"
-        android:textStyle="bold"
-        android:text="@string/forget_password"
-        android:textSize="@dimen/font_13sp"
-        android:textColor="@color/gray_medium"
-        android:id="@+id/tv_title_forget_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        app:layout_constraintTop_toBottomOf="@id/et_input_confirm_password_signup"
+        app:layout_constraintWidth_percent="0.4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

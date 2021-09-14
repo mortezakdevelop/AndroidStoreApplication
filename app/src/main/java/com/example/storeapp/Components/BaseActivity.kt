@@ -2,17 +2,20 @@ package com.example.storeapp.Components
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.DisplayMetrics
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.startActivity
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
 
 open class BaseActivity : AppCompatActivity() {
-    lateinit var context: Context
+    open lateinit var context: Context
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
         context = this
@@ -23,7 +26,7 @@ open class BaseActivity : AppCompatActivity() {
         super.attachBaseContext(newBase?.let { ViewPumpContextWrapper.wrap(it) })
     }
 
-    fun checkNetwork(): Boolean {
+   open fun checkNetwork(): Boolean {
         var result = false
         var cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager?
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -63,3 +66,11 @@ open class BaseActivity : AppCompatActivity() {
         (context as Activity).windowManager.defaultDisplay.getRealMetrics(displayMetrics)
         return displayMetrics.widthPixels
     }
+
+    fun showToast(context:Context,message:String){
+        Toast.makeText(context,message,Toast.LENGTH_LONG).show()
+    }
+
+
+
+
