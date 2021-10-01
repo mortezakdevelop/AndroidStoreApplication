@@ -12,6 +12,15 @@
         android:supportsRtl="false"
         android:theme="@style/Theme.StoreApp">
         <activity
+            android:name=".ForgetPassword.GetPassword.ForgetPasswordCreateNewPasswordActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ForgetPassword.VerificationEmail.ForgetPasswordVerificationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ForgetPassword.GetEmail.ForgetPasswordGetEmailActivity"
+            android:exported="true" />
+        <activity
             android:name=".Activity.SignUp.SignUpActivity"
             android:exported="true" />
         <activity
