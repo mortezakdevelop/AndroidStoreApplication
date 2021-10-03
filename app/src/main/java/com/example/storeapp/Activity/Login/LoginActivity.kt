@@ -8,6 +8,7 @@ import com.example.storeapp.Activity.SignUp.SignUpActivity
 import com.example.storeapp.Components.BaseActivity
 import com.example.storeapp.Components.showToast
 import com.example.storeapp.Dialog.NoInternet.NoInternetActivity
+import com.example.storeapp.ForgetPassword.GetEmail.ForgetPasswordGetEmailActivity
 import com.example.storeapp.R
 import com.example.storeapp.databinding.ActivityLoginBinding
 
@@ -16,6 +17,7 @@ class LoginActivity : BaseActivity() {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var email: String
     private lateinit var password: String
+    private lateinit var forgetPassword: String
 
     //correct format for email with Regex
     private val emailPattern = "[a-zA-Z0-9.-_]+@[a-z]+\\.+[a-z]+"
@@ -24,22 +26,31 @@ class LoginActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         bind()
         context = this
-        binding.tvTitleSignup.setOnClickListener{
-            val intent = Intent(context,SignUpActivity::class.java)
+        binding.tvTitleSignup.setOnClickListener {
+            val intent = Intent(context, SignUpActivity::class.java)
             startActivity(intent)
         }
 
-        binding.btnLogin.setOnClickListener{
-            if (checkNetwork()){
-               sendRequest()
+        binding.btnLogin.setOnClickListener {
+            if (checkNetwork()) {
+                sendRequest()
 
-            }else{
+            } else {
                 // show no internet dialog
-                val intent = Intent(context,NoInternetActivity::class.java)
+                val intent = Intent(context, NoInternetActivity::class.java)
                 startActivity(intent)
             }
         }
+        binding.tvTitleForgetPassword.setOnClickListener {
+            if (checkNetwork()){
+                val intent = Intent(this,ForgetPasswordGetEmailActivity::class.java)
+                startActivity(intent)
 
+            }else{
+                val intent = Intent(this,NoInternetActivity::class.java)
+                startActivity(intent)
+            }
+        }
 
     }
 
@@ -49,14 +60,14 @@ class LoginActivity : BaseActivity() {
         setContentView(binding.root)
     }
 
-    private fun sendRequest(){
+    private fun sendRequest() {
         getEmail()
-        if (checkEmail()){
+        if (checkEmail()) {
             // true --> now you can check password
             getPassword()
-            if (checkPassword()){
+            if (checkPassword()) {
                 // true --> now you can send request server
-                showToast(context,"now you can send request to server")
+                showToast(context, "now you can send request to server")
             }
         }
     }
@@ -74,42 +85,42 @@ class LoginActivity : BaseActivity() {
     // check correct input username(email)
     private fun checkEmail(): Boolean {
         // error --> username is empty
-        return if(email.isEmpty()){
+        return if (email.isEmpty()) {
             //error --> username is empty
-            showToast(context,"username is empty")
+            showToast(context, "username is empty")
             false
-        }else{
-            if(validateEmail(email)){
+        } else {
+            if (validateEmail(email)) {
                 // true --> email is valid
                 true
-            }else{
+            } else {
                 // false --> email is invalid
-                showToast(context,"email is invalid")
+                showToast(context, "email is invalid")
                 false
             }
         }
     }
 
     // check correct input password
-    private fun checkPassword():Boolean{
-        return if (password.isEmpty()){
+    private fun checkPassword(): Boolean {
+        return if (password.isEmpty()) {
             //error --> password is empty
-            showToast(context,"password is empty")
+            showToast(context, "password is empty")
             false
-        }else{
-            if(password.length>=6){
+        } else {
+            if (password.length >= 6) {
                 // input min password size
                 true
-            }else{
+            } else {
                 // error --> input correct password size
-                showToast(context,"input correct password size")
+                showToast(context, "input correct password size")
                 false
             }
         }
     }
 
     // check email format with regex
-    private fun validateEmail(eml:String):Boolean{
+    private fun validateEmail(eml: String): Boolean {
         return eml.matches(emailPattern.toRegex())
 
     }

@@ -4,12 +4,14 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.storeapp.Components.BaseActivity
 import com.example.storeapp.Components.showToast
+import com.example.storeapp.Dialog.NoInternet.NoInternetActivity
 import com.example.storeapp.ForgetPassword.VerificationEmail.ForgetPasswordVerificationActivity
 import com.example.storeapp.R
 import com.example.storeapp.databinding.ActivityForgetPasswordGetEmailBinding
 
-class ForgetPasswordGetEmailActivity : AppCompatActivity() {
+class ForgetPasswordGetEmailActivity : BaseActivity() {
     private lateinit var binding: ActivityForgetPasswordGetEmailBinding
     private lateinit var email: String
 
@@ -18,13 +20,16 @@ class ForgetPasswordGetEmailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bind()
         binding.btnGetEmail.setOnClickListener {
-            getEmail()
-            if (checkEmail()) {
-                // all things is true
-                sendVerificationCode()
+
+                getEmail()
+                if (checkEmail()) {
+                    // all things is true
+                    sendVerificationCode()
+                }
             }
+
         }
-    }
+
 
     private fun bind() {
         binding = ActivityForgetPasswordGetEmailBinding.inflate(layoutInflater)

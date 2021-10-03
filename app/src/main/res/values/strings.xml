@@ -16,10 +16,15 @@
     <string name="forget_password">فراموشی کلمه عبور</string>
     <string name="sign_up">ثبت نام</string>
     <string name="email_signup">ایمیل</string>
-    <string name="confirm_password">تایید رمز عبور</string>
+    <string name="confirm_password">ثبت رمز عبور</string>
     <string name="hint_confirm_password">رمز عبور خود را دوباره وارد نمایید</string>
     <string name="verification_get_email">دریافت رمز یک بار مصرف</string>
     <string name="verify_code">تایید کد</string>
     <string name="verification_code">کد تایید شده</string>
     <string name="hint_verification_code">کد تاییدیه را وارد نمایید</string>
+    <string name="user_home">پروفایل</string>
+    <string name="shopping_home">سبد خرید</string>
+    <string name="category_home">دسته بندی</string>
+    <string name="home_home">خانه</string>
+
 </resources>
