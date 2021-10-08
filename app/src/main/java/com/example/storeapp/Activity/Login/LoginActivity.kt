@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.storeapp.Activity.Main.MainActivity
 import com.example.storeapp.Activity.SignUp.SignUpActivity
 import com.example.storeapp.Components.BaseActivity
 import com.example.storeapp.Components.showToast
@@ -67,7 +68,8 @@ class LoginActivity : BaseActivity() {
             getPassword()
             if (checkPassword()) {
                 // true --> now you can send request server
-                showToast(context, "now you can send request to server")
+                val intent = Intent(context,MainActivity::class.java)
+                startActivity(intent)
             }
         }
     }
